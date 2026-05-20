@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Work Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="form-container">
+        <div class="header">
+            <h1>Work Finder</h1>
+            <p>Join our premium freelance network</p>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+
+        <form id="freelanceForm">
+            <!-- Step 1 -->
+            <div class="form-step active" id="step1">
+                <h2><i class="fa-solid fa-user"></i> Personal Details</h2>
+                <div class="input-group">
+                    <input type="text" id="name" required placeholder=" ">
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="place" required placeholder=" ">
+                    <label for="place">Place / City</label>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="whatsapp" required placeholder=" ">
+                    <label for="whatsapp">WhatsApp Number</label>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-next" onclick="nextStep(1)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step" id="step2">
+                <h2><i class="fa-solid fa-briefcase"></i> Services You Offer</h2>
+                <p class="subtitle">Select all that apply</p>
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Services will be populated by JS -->
+                </div>
+                <div class="btn-group split">
+                    <button type="button" class="btn btn-prev" onclick="prevStep(2)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <button type="button" class="btn btn-next" onclick="nextStep(2)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="form-step" id="step3">
+                <h2><i class="fa-solid fa-tags"></i> Pricing Details</h2>
+                <p class="subtitle">Set your min & max amount for selected services</p>
+                <div class="pricing-container" id="pricingContainer">
+                    <!-- Pricing inputs populated by JS -->
+                </div>
+                <div class="btn-group split">
+                    <button type="button" class="btn btn-prev" onclick="prevStep(3)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <button type="button" class="btn btn-next" onclick="nextStep(3)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="form-step" id="step4">
+                <h2><i class="fa-solid fa-star"></i> Skills</h2>
+                <p class="subtitle">Select your skills</p>
+                <div class="services-grid" id="skillsGrid">
+                    <!-- Skills will be populated by JS -->
+                </div>
+                <div class="btn-group split">
+                    <button type="button" class="btn btn-prev" onclick="prevStep(4)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <button type="button" class="btn btn-next" onclick="nextStep(4)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="form-step" id="step5">
+                <h2><i class="fa-solid fa-link"></i> Portfolio Links</h2>
+                <div class="input-group">
+                    <input type="url" id="portfolio" placeholder=" ">
+                    <label for="portfolio">Portfolio Website Link</label>
+                </div>
+                <div class="input-group">
+                    <input type="url" id="behance" placeholder=" ">
+                    <label for="behance">Behance Link</label>
+                </div>
+                <div class="input-group">
+                    <input type="url" id="linkedin" placeholder=" ">
+                    <label for="linkedin">LinkedIn Link</label>
+                </div>
+                <div class="input-group">
+                    <input type="url" id="instagram" placeholder=" ">
+                    <label for="instagram">Instagram Link</label>
+                </div>
+                <div class="btn-group split">
+                    <button type="button" class="btn btn-prev" onclick="prevStep(5)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <button type="submit" class="btn btn-submit">Submit <i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h2>Awesome!</h2>
+            <p>Your details are ready. Click below to send them to our WhatsApp to complete registration.</p>
+            <button type="button" class="btn btn-whatsapp" id="whatsappBtn"><i class="fa-brands fa-whatsapp"></i> Send to WhatsApp</button>
+            <button type="button" class="btn-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
