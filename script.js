@@ -140,10 +140,63 @@ function generatePricingInputs() {
 }
 
 // Form Submission
-document.getElementById("freelanceForm").addEventListener("submit", function(e) {
+document.getElementById("freelanceForm").addEventListener("submit", async function(e) {
     e.preventDefault();
     if (!validateStep(5)) return;
     
+    const submitBtn = document.querySelector(".btn-submit");
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Submitting... <i class="fa-solid fa-spinner fa-spin"></i>';
+    submitBtn.disabled = true;
+
+    // Collect Data
+    const name = document.getElementById("name").value.trim();
+    const place = document.getElementById("place").value.trim();
+    const whatsapp = document.getElementById("whatsapp").value.trim();
+    const portfolio = document.getElementById("portfolio").value.trim();
+    const behance = document.getElementById("behance").value.trim();
+    const linkedin = document.getElementById("linkedin").value.trim();
+    const instagram = document.getElementById("instagram").value.trim();
+
+    let servicesText = "";
+    selectedServices.forEach(service => {
+        const itemId = service.replace(/\s+/g, '-').toLowerCase();
+        const min = document.getElementById(`min-${itemId}`).value;
+        const max = document.getElementById(`max-${itemId}`).value;
+        servicesText += `${service}: ₹${min} - ₹${max}\n`;
+    });
+
+    let skillsText = selectedSkills.size > 0 ? Array.from(selectedSkills).join(", ") : "None";
+
+    const payload = {
+        name,
+        place,
+        whatsapp,
+        services: servicesText.trim(),
+        skills: skillsText,
+        portfolio,
+        behance,
+        linkedin,
+        instagram
+    };
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxr1wCVcShypf-P3xbaiVu4_lsl3e0woC0mUfaQCYaf2WUvkUSpvqi1PAStRt0qijZ7/exec";
+
+    try {
+        await fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(payload),
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            }
+        });
+    } catch (error) {
+        console.error("Error submitting to Google Sheets:", error);
+    }
+
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
+
     // Show Modal
     const modal = document.getElementById("successModal");
     modal.classList.add("show");

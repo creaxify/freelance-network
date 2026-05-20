@@ -1,16 +1,16 @@
 :root {
-    --primary: #6366f1;
-    --primary-hover: #4f46e5;
-    --secondary: #ec4899;
-    --bg-dark: #0f172a;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --primary: #a855f7;
+    --primary-hover: #9333ea;
+    --secondary: #d946ef;
+    --bg-dark: #090514;
+    --glass-bg: rgba(30, 10, 45, 0.3);
+    --glass-border: rgba(168, 85, 247, 0.2);
     --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    --text-muted: #a78bfa;
     --success: #22c55e;
     --whatsapp: #25D366;
     --whatsapp-hover: #128C7E;
-    --input-bg: rgba(15, 23, 42, 0.4);
+    --input-bg: rgba(15, 5, 25, 0.6);
 }
 
 * {
@@ -22,6 +22,11 @@
 
 body {
     background-color: var(--bg-dark);
+    background-image: 
+        linear-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
     color: var(--text-main);
     min-height: 100vh;
     display: flex;
@@ -29,6 +34,74 @@ body {
     align-items: center;
     overflow-x: hidden;
     position: relative;
+}
+
+.page-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Hero section removed */
+
+/* Sticky WhatsApp */
+.sticky-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.whatsapp-label {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.whatsapp-icon-bg {
+    width: 60px;
+    height: 60px;
+    background: var(--whatsapp);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.sticky-whatsapp:hover .whatsapp-icon-bg {
+    transform: scale(1.1);
+    background: var(--whatsapp-hover);
+    animation: none;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.form-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 /* Background Animations */
@@ -73,7 +146,7 @@ body {
     left: 40%;
     width: 400px;
     height: 400px;
-    background: #3b82f6;
+    background: #7c3aed;
     animation-delay: -10s;
 }
 
@@ -93,7 +166,6 @@ body {
     width: 100%;
     max-width: 600px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    margin: 20px;
     position: relative;
     overflow: hidden;
 }
@@ -454,9 +526,19 @@ h2 i {
 
 /* Responsive */
 @media (max-width: 600px) {
+    .sticky-whatsapp {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-icon-bg {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+
     .form-container {
         padding: 30px 20px;
-        margin: 15px;
         border-radius: 20px;
     }
     

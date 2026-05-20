@@ -15,100 +15,113 @@
         <div class="shape shape-3"></div>
     </div>
 
-    <div class="form-container">
-        <div class="header">
-            <h1>Work Finder</h1>
-            <p>Join our premium freelance network</p>
-            <div class="progress-bar">
-                <div class="progress" id="progress"></div>
-            </div>
+    <!-- Sticky WhatsApp -->
+    <a href="https://chat.whatsapp.com/" target="_blank" class="sticky-whatsapp">
+        <span class="whatsapp-label">Join Group</span>
+        <div class="whatsapp-icon-bg">
+            <i class="fa-brands fa-whatsapp"></i>
         </div>
+    </a>
 
-        <form id="freelanceForm">
-            <!-- Step 1 -->
-            <div class="form-step active" id="step1">
-                <h2><i class="fa-solid fa-user"></i> Personal Details</h2>
-                <div class="input-group">
-                    <input type="text" id="name" required placeholder=" ">
-                    <label for="name">Full Name</label>
+    <div class="page-wrapper">
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-container">
+                <div class="header">
+                    <h1>Join the Network</h1>
+                    <p>Register as a premium freelancer</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <input type="text" id="place" required placeholder=" ">
-                    <label for="place">Place / City</label>
-                </div>
-                <div class="input-group">
-                    <input type="tel" id="whatsapp" required placeholder=" ">
-                    <label for="whatsapp">WhatsApp Number</label>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-next" onclick="nextStep(1)">Next <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </div>
 
-            <!-- Step 2 -->
-            <div class="form-step" id="step2">
-                <h2><i class="fa-solid fa-briefcase"></i> Services You Offer</h2>
-                <p class="subtitle">Select all that apply</p>
-                <div class="services-grid" id="servicesGrid">
-                    <!-- Services will be populated by JS -->
-                </div>
-                <div class="btn-group split">
-                    <button type="button" class="btn btn-prev" onclick="prevStep(2)"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                    <button type="button" class="btn btn-next" onclick="nextStep(2)">Next <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </div>
+                <form id="freelanceForm">
+                    <!-- Step 1 -->
+                    <div class="form-step active" id="step1">
+                        <h2><i class="fa-solid fa-user"></i> Personal Details</h2>
+                        <div class="input-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Full Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="place" required placeholder=" ">
+                            <label for="place">Place / City</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" id="whatsapp" required placeholder=" ">
+                            <label for="whatsapp">WhatsApp Number</label>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-next" onclick="nextStep(1)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
 
-            <!-- Step 3 -->
-            <div class="form-step" id="step3">
-                <h2><i class="fa-solid fa-tags"></i> Pricing Details</h2>
-                <p class="subtitle">Set your min & max amount for selected services</p>
-                <div class="pricing-container" id="pricingContainer">
-                    <!-- Pricing inputs populated by JS -->
-                </div>
-                <div class="btn-group split">
-                    <button type="button" class="btn btn-prev" onclick="prevStep(3)"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                    <button type="button" class="btn btn-next" onclick="nextStep(3)">Next <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </div>
+                    <!-- Step 2 -->
+                    <div class="form-step" id="step2">
+                        <h2><i class="fa-solid fa-briefcase"></i> Services You Offer</h2>
+                        <p class="subtitle">Select all that apply</p>
+                        <div class="services-grid" id="servicesGrid">
+                            <!-- Services will be populated by JS -->
+                        </div>
+                        <div class="btn-group split">
+                            <button type="button" class="btn btn-prev" onclick="prevStep(2)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                            <button type="button" class="btn btn-next" onclick="nextStep(2)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
 
-            <!-- Step 4 -->
-            <div class="form-step" id="step4">
-                <h2><i class="fa-solid fa-star"></i> Skills</h2>
-                <p class="subtitle">Select your skills</p>
-                <div class="services-grid" id="skillsGrid">
-                    <!-- Skills will be populated by JS -->
-                </div>
-                <div class="btn-group split">
-                    <button type="button" class="btn btn-prev" onclick="prevStep(4)"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                    <button type="button" class="btn btn-next" onclick="nextStep(4)">Next <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </div>
+                    <!-- Step 3 -->
+                    <div class="form-step" id="step3">
+                        <h2><i class="fa-solid fa-tags"></i> Pricing Details</h2>
+                        <p class="subtitle">Set your min & max amount for selected services</p>
+                        <div class="pricing-container" id="pricingContainer">
+                            <!-- Pricing inputs populated by JS -->
+                        </div>
+                        <div class="btn-group split">
+                            <button type="button" class="btn btn-prev" onclick="prevStep(3)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                            <button type="button" class="btn btn-next" onclick="nextStep(3)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
 
-            <!-- Step 5 -->
-            <div class="form-step" id="step5">
-                <h2><i class="fa-solid fa-link"></i> Portfolio Links</h2>
-                <div class="input-group">
-                    <input type="url" id="portfolio" placeholder=" ">
-                    <label for="portfolio">Portfolio Website Link</label>
-                </div>
-                <div class="input-group">
-                    <input type="url" id="behance" placeholder=" ">
-                    <label for="behance">Behance Link</label>
-                </div>
-                <div class="input-group">
-                    <input type="url" id="linkedin" placeholder=" ">
-                    <label for="linkedin">LinkedIn Link</label>
-                </div>
-                <div class="input-group">
-                    <input type="url" id="instagram" placeholder=" ">
-                    <label for="instagram">Instagram Link</label>
-                </div>
-                <div class="btn-group split">
-                    <button type="button" class="btn btn-prev" onclick="prevStep(5)"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                    <button type="submit" class="btn btn-submit">Submit <i class="fa-solid fa-paper-plane"></i></button>
-                </div>
+                    <!-- Step 4 -->
+                    <div class="form-step" id="step4">
+                        <h2><i class="fa-solid fa-star"></i> Skills</h2>
+                        <p class="subtitle">Select your skills</p>
+                        <div class="services-grid" id="skillsGrid">
+                            <!-- Skills will be populated by JS -->
+                        </div>
+                        <div class="btn-group split">
+                            <button type="button" class="btn btn-prev" onclick="prevStep(4)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                            <button type="button" class="btn btn-next" onclick="nextStep(4)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="form-step" id="step5">
+                        <h2><i class="fa-solid fa-link"></i> Portfolio Links</h2>
+                        <div class="input-group">
+                            <input type="url" id="portfolio" placeholder=" ">
+                            <label for="portfolio">Portfolio Website Link</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="url" id="behance" placeholder=" ">
+                            <label for="behance">Behance Link</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="url" id="linkedin" placeholder=" ">
+                            <label for="linkedin">LinkedIn Link</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="url" id="instagram" placeholder=" ">
+                            <label for="instagram">Instagram Link</label>
+                        </div>
+                        <div class="btn-group split">
+                            <button type="button" class="btn btn-prev" onclick="prevStep(5)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                            <button type="submit" class="btn btn-submit">Submit <i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </section>
     </div>
 
     <!-- Success Modal -->
